@@ -84,6 +84,19 @@ export function addOrder(user, items, total, shipTo) {
   write(localStorage, ORDERS, [...getOrders(), order]);
 }
 
+// Delivery stage of an order: 0 placed, 1 packed, 2 shipped, 3 out for delivery, 4 delivered.
+export function setOrderStatus(id, status) {
+  const orders = getOrders();
+  const o = orders.find((x) => x.id === id);
+  if (!o) return;
+  const times = {};
+  Object.entries(o.stageTimes || { 0: o.date }).forEach(([k, v]) => { if (Number(k) <= status) times[k] = v; });
+  if (!times[status]) times[status] = new Date().toISOString();
+  o.status = status;
+  o.stageTimes = times;
+  write(localStorage, ORDERS, orders);
+}
+
 // ---------- Admin delete helpers ----------
 export const deleteOrder = (id) => write(localStorage, ORDERS, getOrders().filter((o) => o.id !== id));
 
