@@ -30,7 +30,7 @@ export default function Login({ onLogin }) {
         <input name="name" placeholder="Full name" value={form.name} onChange={handleChange} required />
       )}
       <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange} required />
-      <input name="password" type="password" placeholder="Password" minLength={4} value={form.password} onChange={handleChange} required />
+      <PasswordInput minLength={4} value={form.password} onChange={handleChange} />
       <button className="primary" type="submit">{isSignup ? "Sign up" : "Login"}</button>
       <p className="muted">
         {isSignup ? "Already have an account?" : "New here?"}{" "}
@@ -64,10 +64,23 @@ export function AdminLogin({ onLogin }) {
         <h2>🔒 Admin Login</h2>
         {error && <p className="error">{error}</p>}
         <input name="email" type="email" placeholder="Admin email" value={form.email} onChange={handleChange} required />
-        <input name="password" type="password" placeholder="Password" value={form.password} onChange={handleChange} required />
+        <PasswordInput value={form.password} onChange={handleChange} />
         <button className="primary" type="submit">Login</button>
         <Link to="/">← Back to store</Link>
       </form>
+    </div>
+  );
+}
+
+// Password box with a show / hide button (used by both login forms).
+function PasswordInput({ value, onChange, minLength }) {
+  const [show, setShow] = useState(false);
+  return (
+    <div className="pw-wrap">
+      <input name="password" type={show ? "text" : "password"} placeholder="Password" minLength={minLength} value={value} onChange={onChange} required />
+      <button type="button" className="pw-eye" onClick={() => setShow(!show)} aria-label={show ? "Hide password" : "Show password"} title={show ? "Hide password" : "Show password"}>
+        {show ? "🙈" : "👁️"}
+      </button>
     </div>
   );
 }
