@@ -93,8 +93,11 @@ Open the admin login page.
 http://localhost:5173/admin-login
 
 Use the demonstration credentials configured for the project.
+
 Email: [admin@store.com](mailto:admin@store.com)
+
 Password: admin123
+
 After logging in, use the dashboard sections to manage the application.
 
 
