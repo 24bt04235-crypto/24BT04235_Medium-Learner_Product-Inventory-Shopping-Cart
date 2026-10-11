@@ -8,7 +8,7 @@ This project runs locally on your computer and does not currently have a publicl
 
 Features
 
-Customer Features:-
+**Customer Features:-**
 * Browse products with images, prices, and categories.
 * Search for products and filter them by category.
 * View detailed information about individual products.
@@ -23,7 +23,7 @@ Customer Features:-
 * Expand orders to view all products, quantities, prices, and line totals.
 * View shipping information, delivery details, tracking numbers, and delivery progress.
 
-Admin Dashboard:-
+**Admin Dashboard:-**
 * View customer statistics, orders, revenue, and recent activity.
 * View recorded login activity and timestamps.
 * Review customer orders and order details.
@@ -32,7 +32,7 @@ Admin Dashboard:-
 * Increase, decrease, reset, or manually edit product stock.
 * Delete available demonstration records.
 
-Technologies Used:-
+**Technologies Used:-**
 * React
 * JavaScript ES6
 * JSX
@@ -42,33 +42,31 @@ Technologies Used:-
 * Browser storage for demonstration data persistence
 
 
-How to Run the Project:-
+**How to Run the Project:-**
+Prerequisites: Install Node.js on your computer. npm is included with Node.js.
 
-Prerequisites:-
-Install Node.js on your computer. npm is included with Node.js.
-
-Step 1:- Clone the Repository
+**Step 1:-** Clone the Repository
 Open a terminal and run the following command.
 bash
 command:- _git clone YOUR_GITHUB_REPOSITORY_URL_
 
 ==> Replace YOUR_GITHUB_REPOSITORY_URL with your actual GitHub repository URL.
 
-Step 2:- Open the Project Folder
+**Step 2:-** Open the Project Folder
 bash
 command:- cd product-store
 
 If your repository uses a different folder name, enter that name instead.
 
-Step 3:- Install Dependencies
+**Step 3:-** Install Dependencies
 bash
 command:- npm install
 
-Step 4:- Start the Development Server
+**Step 4:-** Start the Development Server
 bash
 command:- npm run dev
 
-Step 5:- Open the Website
+**Step 5:-** Open the Website
 Open the local address displayed in your terminal. The default Vite address is usually:
 http://localhost:5173
 
