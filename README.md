@@ -47,28 +47,28 @@ How to Run the Project:-
 Prerequisites:-
 Install Node.js on your computer. npm is included with Node.js.
 
-Step 1 Clone the Repository
+Step 1:- Clone the Repository
 Open a terminal and run the following command.
 bash
 command:- _git clone YOUR_GITHUB_REPOSITORY_URL_
 
 ==> Replace YOUR_GITHUB_REPOSITORY_URL with your actual GitHub repository URL.
 
-Step 2 Open the Project Folder
+Step 2:- Open the Project Folder
 bash
 command:- cd product-store
 
 If your repository uses a different folder name, enter that name instead.
 
-Step 3 Install Dependencies
+Step 3:- Install Dependencies
 bash
 command:- npm install
 
-Step 4 Start the Development Server
+Step 4:- Start the Development Server
 bash
 command:- npm run dev
 
-Step 5 Open the Website
+Step 5:- Open the Website
 Open the local address displayed in your terminal. The default Vite address is usually:
 http://localhost:5173
 
