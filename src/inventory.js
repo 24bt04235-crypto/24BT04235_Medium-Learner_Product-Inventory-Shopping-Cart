@@ -51,6 +51,14 @@ export function reduceStock(items) {
   return { ok: true };
 }
 
+// Admin: set the stock of one product to an exact number (never below 0).
+export function setStock(id, qty) {
+  const stock = {};
+  getProducts().forEach((p) => { stock[p.id] = p.quantity; });
+  stock[id] = Math.max(0, Math.floor(Number(qty) || 0));
+  localStorage.setItem(STOCK, JSON.stringify(stock));
+}
+
 export const resetStock = () => localStorage.removeItem(STOCK);
 
 // Cart is saved per customer so it survives a page refresh. Stored as [{ id, qty }].
