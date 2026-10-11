@@ -1,94 +1,157 @@
-CARTNOVA
+CartNova
 
-Product Inventory and Shopping Cart website built with React
+Product Inventory and Shopping Cart Website
 
-CartNova is a small online shopping website that I built with React for my CEC practical assignment. You can browse products, add them to a cart and place an order. There is also an admin dashboard where the owner can see customers, orders and stock.
+CartNova is an online shopping website developed using React as part of my CEC practical assignment. It allows customers to browse products, manage their shopping cart, place orders, and track their order history. It also includes an admin dashboard for managing customers, orders, inventory, and delivery status.
 
-This project runs on localhost, which means it runs on your own computer. There is no live website link. Follow the steps below to run it.
+This project runs locally on your computer and does not currently have a publicly hosted website.
 
-HOW TO RUN IT ON YOUR COMPUTER
+Features
 
-You need Node.js installed on your computer. Open a terminal and type these commands one by one.
+Customer Features:-
+* Browse products with images, prices, and categories.
+* Search for products and filter them by category.
+* View detailed information about individual products.
+* Add products to the shopping cart.
+* Increase or decrease product quantities.
+* Remove products from the cart.
+* Calculate the total price automatically.
+* Create an account, log in, and log out.
+* Place orders and update product stock.
+* View previous orders through the My Orders page.
+* View order dates, totals, status, and product summaries.
+* Expand orders to view all products, quantities, prices, and line totals.
+* View shipping information, delivery details, tracking numbers, and delivery progress.
 
-git clone paste-your-repo-link-here
+Admin Dashboard:-
+* View customer statistics, orders, revenue, and recent activity.
+* View recorded login activity and timestamps.
+* Review customer orders and order details.
+* View delivery information and update delivery stages.
+* View customer information and spending totals.
+* Increase, decrease, reset, or manually edit product stock.
+* Delete available demonstration records.
 
-cd project-folder-name
+Technologies Used:-
+* React
+* JavaScript ES6
+* JSX
+* React Router
+* Vite
+* CSS
+* Browser storage for demonstration data persistence
 
-npm install
 
-npm run dev
+How to Run the Project:-
 
-When the terminal shows a Local address, open http://localhost:5173 in your browser. Keep the terminal open while you use the website. Press Ctrl and C in the terminal to stop it.
+Prerequisites:-
+Install Node.js on your computer. npm is included with Node.js.
 
-Tip: do not keep symbols like the and-sign in the folder name. It can break the terminal on Windows.
+Step 1 Clone the Repository
+Open a terminal and run the following command.
+bash
+command:- _git clone YOUR_GITHUB_REPOSITORY_URL_
 
-HOW TO USE IT AS A CUSTOMER
+==> Replace YOUR_GITHUB_REPOSITORY_URL with your actual GitHub repository URL.
 
-Open the website and look around. You can browse products without logging in.
-Use the search box or the category dropdown to find products.
-Click View Details on any product to see more about it.
-Click Add to Cart. The website will ask you to sign up first. Fill in your name, email and password. The eye button lets you see your password.
-Add more products. Then open your Cart from the top right corner. Use plus and minus to change how many you want. Use Remove to take an item out. The total price updates by itself.
-Type your name and press Place Order. Your order is saved and the stock goes down.
-Press Logout when you finish. Your cart will still be there the next time you log in.
+Step 2 Open the Project Folder
+bash
+command:- cd product-store
 
-HOW TO USE IT AS THE ADMIN
+If your repository uses a different folder name, enter that name instead.
 
-Click Admin in the top menu, or open http://localhost:5173/admin-login
-Log in with this email and password.
+Step 3 Install Dependencies
+bash
+command:- npm install
 
-Email: admin@store.com
+Step 4 Start the Development Server
+bash
+command:- npm run dev
 
+Step 5 Open the Website
+Open the local address displayed in your terminal. The default Vite address is usually:
+http://localhost:5173
+
+Keep the terminal open while using the website. Press Ctrl and C together in the terminal to stop the development server.
+
+On Windows, avoid using special characters such as the ampersand in the project folder name because they may cause terminal issues.
+
+How to Use CartNova as a Customer:-
+1. Open the website in your browser.
+2. Browse products without logging in.
+3. Use the search bar or category filter to find products.
+4. Select View Details to inspect a product.
+5. Select Add to Cart. Create an account or log in if prompted.
+6. Open the cart and use the plus and minus controls to adjust quantities.
+7. Remove unwanted products and review the updated total.
+8. Enter the required order information and select Place Order.
+9. Open My Orders from the navigation bar to view your order history.
+10. Select View Details and Tracking to inspect delivery information and order progress.
+11. Use Show All Products to expand an order and view its complete product list.
+12. Log out when finished.
+
+How to Use CartNova as the Admin
+Open the admin login page.
+http://localhost:5173/admin-login
+
+Use the demonstration credentials configured for the project.
+Email: [admin@store.com](mailto:admin@store.com)
 Password: admin123
+After logging in, use the dashboard sections to manage the application.
 
-You will see the dashboard with five tabs.
 
-Overview: see total customers, logins, orders and money earned, plus a live activity list.
+Overview:- View summary statistics and recent activity.
+Login Activity:- View recorded logins and timestamps.
+Orders:- Review customer orders and open their tracking details.
+Customers:- View customer records and spending totals.
+Inventory:- Manage product stock and reset the demonstration inventory.
 
-Login activity: see who logged in and at what time.
+In the order tracking window, the admin can move an order through its delivery stages using the available controls. Customers can view their own order details and tracking progress without accessing the admin status controls.
 
-Orders: see who bought what and when. Click Track to open the delivery window. It shows the shipping address, the delivery address, the tracking number and the delivery progress. Press Next stage to move the order forward.
+==> The credentials are for demonstration purposes only and are not secure enough for a publicly deployed application.
 
-Customers: see all customers and how much each one spent.
+Testing Customer and Admin Features Together:-
+You can test the customer and admin workflows simultaneously.
 
-Inventory: see the stock of every product. Use minus, plus, plus 10 or type a number to change the stock.
+1. Open http://localhost:5173 in one browser tab.
+2. Open http://localhost:5173/admin-login in another tab of the same browser.
+3. Place an order from the customer tab.
+4. Check the Orders section in the admin dashboard.
+5. Update the delivery stage from the admin tab.
+6. Return to My Orders and check the customer's tracking information.
 
-Every tab has Delete buttons if you want to remove data. In Inventory, Reset stock brings back the original numbers.
+This is a convenient way to demonstrate the order management workflow. Updates and synchronization depend on the application's browser storage implementation.
 
-EASY WAY TO TRY BOTH TOGETHER
+CEC Assignment Concepts Covered:-
+This project demonstrates several React and frontend development concepts.
 
-Open http://localhost:5173 in one browser tab as a customer, and open http://localhost:5173/admin-login in another tab of the same browser as the admin. Place an order as the customer and you will see it show up in the admin tab within a few seconds.
+* React ES6 and JSX
+* Functional and class components where implemented
+* Reusable components and component composition
+* Props and event handling
+* Lists and conditional rendering
+* Forms and controlled inputs
+* React Router and page navigation
+* State management using React hooks
+* Memoized calculations and filtering using useMemo where implemented
+* Product listing, searching, category filtering, and product details
+* Shopping cart operations and automatic total calculation
+* Order creation, inventory updates, and delivery tracking
+* Browser storage and client side data persistence
 
-Please use two tabs of the same browser and not two different browsers, because the data is saved inside the browser.
+Important Limitations:-
+CartNova is a frontend demonstration project and is not a production ready ecommerce platform.
 
-WHAT THIS PROJECT COVERS FROM THE CEC ASSIGNMENT
+* There is no backend server. Application data is stored in the browser rather than a central database.
+* Customer records, orders, and inventory may not be shared across different browsers or computers.
+* Client side authentication and demonstration credentials are not secure enough for production.
+* No payment gateway is integrated.
+* Shipping information and delivery stages are simulated.
+* Stored data may be lost if browser storage is cleared. Private browsing and browser settings may also affect persistence.
 
-React ES6 and JSX in every file.
+Because this version does not use a central backend, it should not be treated as a real multi user online store.
 
-Functional and class components. Footer is the class component.
 
-Reusable components: ProductCard, SearchBar and CategoryFilter.
+Built With:- React, JavaScript, JSX, React Router, Vite, and CSS.
 
-Props, events, lists, forms and conditional rendering.
-
-React Router to move between pages.
-
-useMemo for the filtered product list and the cart total.
-
-Product details: ID, name, category, price, quantity and image.
-
-All the functions asked in the assignment: show products, search, filter by category, add to cart, increase and decrease quantity, remove items, calculate the total, and move between pages.
-
-GOOD TO KNOW
-
-This is a demo website with no backend. All the data, such as customers, orders and stock, is saved in your own browser, so it will not appear on someone else’s computer. If you open the site in a new browser, you start fresh.
-
-The admin password and the shipping and delivery addresses are dummy examples.
-
-A customer and the admin can be logged in at the same time if they use different tabs of the same browser.
-
-If you close a tab, you are logged out of that tab.
-
-BUILT WITH
-
-React, React Router, Vite and plain CSS.
+Repository: Add your GitHub repository URL here.
