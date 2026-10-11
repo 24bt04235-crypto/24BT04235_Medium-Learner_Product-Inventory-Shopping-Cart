@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect, Component } from "react";
 import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import Products from "./Products";
 import ProductDetails from "./ProductDetails";
-import Cart from "./Cart";
+import Cart, { MyOrders } from "./Cart";
 import Login, { AdminLogin } from "./Login";
 import Admin from "./Admin";
 import Home from "./Home";
@@ -112,6 +112,7 @@ function Store({ user, setUser, products, refreshProducts }) {
     refreshProducts();
     alert(`Thank you ${shipTo}! Order placed.`);
     setCart([]);
+    navigate("/orders"); // show the new order right away
   };
 
   const handleLogout = () => {
@@ -135,6 +136,7 @@ function Store({ user, setUser, products, refreshProducts }) {
           ) : (
             <Link to="/login" className="acct"><small>Hello, sign in</small><b>Account</b></Link>
           )}
+          {user && <Link to="/orders" className="acct"><small>My</small><b>Orders</b></Link>}
           <Link to="/cart" className="cartlink">🛒<span className="badge">{count}</span><b>Cart</b></Link>
         </div>
       </header>
@@ -159,6 +161,10 @@ function Store({ user, setUser, products, refreshProducts }) {
                 <Navigate to="/login" state={{ msg: "Please login to view your cart." }} replace />
               )
             }
+          />
+          <Route
+            path="/orders"
+            element={user ? <MyOrders user={user} /> : <Navigate to="/login" state={{ msg: "Please login to see your orders." }} replace />}
           />
           <Route path="*" element={<p className="empty">Page not found.</p>} />
         </Routes>
